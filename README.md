@@ -117,8 +117,10 @@ Susu activates when all invited people accept the invitation.
 Everyone in the susu receives an email notifying them that the susu is active.
 Eli and the four members make daily deposits of $5 for 3months. The susu has a total of $2250.
 Eli makes a loan request for $2000.
-Each member (except for Eli) gets an email notifying them that they have a pending loan request for x susu. There is a link on the email to login to the susu. 
-Each member approves Eli's loan and then Eli gets an email notifying them that $GG will be transferred into their checking account. 
+Each member (except for Eli) gets an email notifying them that they have a pending withdrawal request for x susu. There is a link on the email to login to the susu. 
+Each member approves Eli's withdrawal request and then Eli gets an email notifying them that $GG will be transferred into their checking account. 
+Eli gets his dental work done and continues to pay into the susu for 6 more months. 
+
 
 
 
