@@ -58,11 +58,14 @@ CRUD:
 - [ ] Mobile responsive 
 - [ ] Write Bootstrap Theme  
 - [ ] Money sharing calculator 
-- [ ] 
+- [ ] Must use data models
 - [ ] Must be able to do user authentication – Log In/Log Out/Sign Up
-- [ ] User must be able to change financial information shared with application (bills, expenses, income, etc.)
-- [ ] Network info must be able to update based on user info (specifically should be able to show how many users are in the network)
-- [ ] Must use an algorithm to figure out how much each persyn in the network must share 
+- [ ] User must be able to change profile information
+- [ ] Susu info must be able to update based on user info (specifically should be able to show how many users are in the network)
+- [ ] Must keep up with deposits and withdrawals
+- [ ] Must integrate email notification service
+- [ ] Must integrate image hosting service
+- 
 
 ## Extra Specs 
 
