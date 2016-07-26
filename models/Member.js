@@ -11,6 +11,10 @@ Member.add({
 	name: { type: Types.Name, required: true, index: true },
 	email: { type: Types.Email, initial: true, required: true, index: true },
 	password: { type: Types.Password, initial: true, required: true },
+	susu: { type: Types.Relationship, ref: 'Susu' },
+	checking: { type: Types.Number, initial: true, required: true },
+	deposits: {type: Types.Relationship, ref: 'Deposits'},
+	withdrawals: {type: Types.Relationship, ref: 'Withdrawals'}
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 });
