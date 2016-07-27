@@ -7,7 +7,7 @@ keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 var auth_path = keystone.import('node_modules/keystone/admin/routes/views');
 
-var auth_path = keystone.import('node_modules/keystone/admin/routes/views')
+var auth_path = keystone.import('node_modules/keystone/admin/routes/views');
 
 // Import Route Controllers
 var routes = {

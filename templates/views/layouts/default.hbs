@@ -24,7 +24,7 @@
 	<body>
 		<div id="header">
 			<div class="container">
-<<<<<<< HEAD
+
 				<div role="navigation" class="navbar navbar-default">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -35,7 +35,7 @@
 							<a href="/" class="navbar-brand">JOJO</a>
 						</div>
 						<div class="collapse navbar-collapse">
-=======
+
 				<nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -68,8 +68,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-						{{!-- <div class="collapse navbar-collapse">
->>>>>>> origin/master
+				<!-- 		{{!<div class="collapse navbar-collapse">
+
 							<ul class="nav navbar-nav navbar-left">
 									{{# each navLinks}}
 									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
@@ -93,11 +93,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="body"> --}}
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
+		<div id="body">}}
+		<!-	<! -->
+			<!-- 	Flash messages allow you to display once-off status messages to users, e.g. form
+				validation errors, success messages,
+		 -->
+
 			{{#if messages}}
 			<div id="flash-messages" class="container">
 				{{#if messages.info}}
@@ -128,21 +129,20 @@
     <footer class="footer">
 		<div class="container" id="footer">
 			
-    <div style="text-decoration:none; overflow:hidden; height:200px; width:200px; max-width:100%;"><div id="embed-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=492+9th+Street,+Oakland,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-html" href="https://www.hostingreviews.website/compare/hostgator-vs-bluehost" id="get-data-for-embed-map">bluehost vs hostgator</a><style>#embed-map-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=4d3b2174-729d-6c02-3ca2-5e7f27aaac11&c=embed-map-html&u=1469644590" defer="defer" async="async"></script>
-				<p>Powered by Team JAS <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-
+<div class="col-md-5">
+<div style="text-decoration:none; overflow:hidden; height:200px; width:200px; max-width:100%;"><div id="embed-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=492+9th+Street,+Oakland,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-html" href="https://www.hostingreviews.website/compare/hostgator-vs-bluehost" id="get-data-for-embed-map">bluehost vs hostgator</a><style>#embed-map-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=4d3b2174-729d-6c02-3ca2-5e7f27aaac11&c=embed-map-html&u=1469644590" defer="defer" async="async"></script>
+</div>
 		</div>
-		</div>
-		{{!--
+	<!-- 	{{!
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
+		}} -->
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{!--
+	<!-- 	{{!
 			//- Customise which Bootstrap javascript files are served by including
 			//- them specifically here, instead of bootstrap-3.3.5.min.js
-		--}}
+		}} -->
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
 		{{{isAdminEditorJS user}}}
 	</body>
