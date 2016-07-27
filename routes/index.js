@@ -23,6 +23,11 @@ exports = module.exports = function (app) {
 	// app.get('/susu', routes.views.susu);
 	app.get('/loan', routes.views.loan);
 
+	app.get('/dashboard', routes.views.dashboard);
+	app.get('/deposits', routes.views.deposit);
+	app.get('/withdraw', routes.views.withdraw);
+	app.get('/calculator', routes.views.calculator);
+
 
 	// index
 	app.get('/susu', routes.views.susu.index)
