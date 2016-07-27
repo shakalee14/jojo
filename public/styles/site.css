@@ -1,0 +1,13 @@
+div iframe {
+  max-width: 100%;
+}
+
+.right.carousel-control, .left.carousel-control {
+    display: none;
+}
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+width: 100%; /* use this, or not */
+margin: auto;
+}
