@@ -40,16 +40,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-      	<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+      	<li class="active"><a href="/keystone/signin">Log In<span class="sr-only">(current)</span></a></li>
+        <li><a href="/signup">Sign Up</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Susus<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="/susu">Create a New Susu</a></li>
+            <li><a href="/account">Susu Accounts</a></li>
+           
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Log Out</a></li>
           </ul>
         </li>
       </ul>
@@ -108,10 +108,13 @@
 			<!-- The content block should contain the body of your template's content-->
 			{{{body}}}
 		</div>
-		<div class="container">
-			<div id="footer">
-				<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-			</div>
+    <footer class="footer">
+		<div class="container" id="footer">
+			
+    <div style="text-decoration:none; overflow:hidden; height:200px; width:200px; max-width:100%;"><div id="embed-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=492+9th+Street,+Oakland,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-html" href="https://www.hostingreviews.website/compare/hostgator-vs-bluehost" id="get-data-for-embed-map">bluehost vs hostgator</a><style>#embed-map-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=4d3b2174-729d-6c02-3ca2-5e7f27aaac11&c=embed-map-html&u=1469644590" defer="defer" async="async"></script>
+				<p>Powered by Team JAS <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+
+		</div>
 		</div>
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
