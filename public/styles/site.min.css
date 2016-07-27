@@ -1,7 +1,8 @@
 
 
 nav.navbar {
-  background-color: #9068be;  
+    background-color: #e95420;
+    border-color: #d34615; 
 }
 
 div.jumbotron {
@@ -12,6 +13,9 @@ h2, p {
   color: #212121;
 }
 
+.right.carousel-control, .left.carousel-control {
+    display: none;
+}
 
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
