@@ -9,6 +9,8 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
-	// Render the view
-	view.render('index');
-  };
+  console.log('req.user',req.user)
+
+  // Render the view
+  view.render('index');
+};

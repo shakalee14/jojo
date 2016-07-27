@@ -1,161 +1,138 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Jojo</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro|Slabo+27px' rel='stylesheet' type='text/css'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jojo</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro|Slabo+27px' rel='stylesheet' type='text/css'>
     <link href="/styles/site.css" rel="stylesheet">
-		<link href="/styles/site.min.css" rel="stylesheet">
-
-		{{!-- This file provides the default styling for the KeystoneJS Content Editor
-			- only renders when user is logged in and admin--}}
-		{{{isAdminEditorCSS user}}}
-
-		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8 --}}
-		<!--[if lt IE 9]>
-			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
-	</head>
-	<body>
-		<div id="header">
-			<div class="container">
-				<nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <img src="/images/logo.svg" width="160">
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-      	<li class="active"><a href="/keystone/signin">Log In<span class="sr-only">(current)</span></a></li>
-        <li><a href="/signup">Sign Up</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Susus<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/susu">Create a New Susu</a></li>
-            <li><a href="/account">Susu Accounts</a></li>
-           
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-						{{!-- <div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-left">
-									{{# each navLinks}}
-									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
-									</li>
-								{{/each}}
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								{{#if user}}
-								<li><a href="/signout">Sign Out</a></li>
-								{{else}}
-								<li><a href="/signin">Sign In</a></li>
-								{{/if}}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="body"> --}}
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
-				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
-			</div>
-			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
-		</div>
-    <footer class="footer">
-		<div class="container" id="footer">
-      <div class="row">
-        <div class="col-md-7">  
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    {{!-- This file provides the default styling for the KeystoneJS Content Editor
+    - only renders when user is logged in and admin--}}
+    {{{isAdminEditorCSS user}}}
+    {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    //- Safely remove this block if you are not targeting IE8 --}}
+    <!--[if lt IE 9]>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <a href="/"><img src="/images/logo.svg" width="160" /></a>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                {{#if user}}
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.name.first}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/susu/new">Create a New Susu</a></li>
+                      <li><a href="/susu">Susu Accounts</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="/keystone/signout">Log Out</a></li>
+                    </ul>
+                  </li>
+                {{else}}
+                  <li class="active"><a href="/keystone/signin">Log In<span class="sr-only">(current)</span></a></li>
+                  <li><a href="/signup">Sign Up</a></li>
+                {{/if}}
+              </ul>
             </div>
-            <div class="form-group">
-              <label for="exampleInputFile">File input</label>
-              <input type="file" id="exampleInputFile">
-              <p class="help-block">Example block-level help text here.</p>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Check me out
-              </label>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-    </div>
-      <div class="col-md-5">
-         <div style="text-decoration:none; overflow:hidden; height:200px; width:200px; max-width:100%;"><div id="embed-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=492+9th+Street,+Oakland,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-html" href="https://www.hostingreviews.website/compare/hostgator-vs-bluehost" id="get-data-for-embed-map">bluehost vs hostgator</a><style>#embed-map-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=4d3b2174-729d-6c02-3ca2-5e7f27aaac11&c=embed-map-html&u=1469644590" defer="defer" async="async"></script>
+          </div>
+        </nav>
       </div>
-
-			
-   
-				<p>Powered by Team JAS <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-
-		</div>
-		</div>
-		{{!--
-			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{!--
-			//- Customise which Bootstrap javascript files are served by including
-			//- them specifically here, instead of bootstrap-3.3.5.min.js
-		--}}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-		{{{isAdminEditorJS user}}}
-	</body>
-</html>
+    </div>
+    <div id="body">
+      <!--
+      Flash messages allow you to display once-off status messages to users, e.g. form
+      validation errors, success messages, etc
+      -->
+      {{#if messages}}
+      <div id="flash-messages" class="container">
+        {{#if messages.info}}
+        <div class="alert alert-info">
+          {{{flashMessages messages.info}}}
+        </div>
+        {{/if}}
+        {{#if messages.success}}
+        <div class="alert alert-success">
+          {{{flashMessages messages.success}}}
+        </div>
+        {{/if}}
+        {{#if messages.warning}}
+        <div class="alert alert-warning">
+          {{{flashMessages messages.warning}}}
+        </div>
+        {{/if}}
+        {{#if messages.error}}
+        <div class="alert alert-danger">
+          {{{flashMessages messages.error}}}
+        </div>
+        {{/if}}
+      </div>
+      {{/if}}
+      <!-- The content block should contain the body of your template's content-->
+      {{{body}}}
+    </div>
+    <footer class="footer">
+      <div class="container" id="footer">
+        <div class="row">
+          <div class="col-md-7">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+          <div class="col-md-5">
+            <div style="text-decoration:none; overflow:hidden; height:200px; width:200px; max-width:100%;"><div id="embed-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=492+9th+Street,+Oakland,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embed-map-html" href="https://www.hostingreviews.website/compare/hostgator-vs-bluehost" id="get-data-for-embed-map">bluehost vs hostgator</a><style>#embed-map-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=4d3b2174-729d-6c02-3ca2-5e7f27aaac11&c=embed-map-html&u=1469644590" defer="defer" async="async"></script>
+          </div>
+          
+          
+          <p>Powered by Team JAS <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
+        </div>
+      </div>
+      {{!--
+      //- jQuery 1.11.3 is included by default, and required by both Bootstrap
+      //- and the KeystoneJS Content Editor. If you are not targeting IE8,
+      //- you can upgrade to 2.1.4 (also bundled) for better performance.
+      --}}
+      <script src="/js/jquery/jquery-1.11.3.min.js"></script>
+      {{!--
+      //- Customise which Bootstrap javascript files are served by including
+      //- them specifically here, instead of bootstrap-3.3.5.min.js
+      --}}
+      <script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+      {{{isAdminEditorJS user}}}
+    </body>
+  </html>

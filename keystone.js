@@ -28,7 +28,9 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'Member',
-	'cookie secret': 'alongunreadableunguessablestringwhichnononewilleverpickrandomlyandprobablynotevenwithaconcertedeffortandawholelotofclues'
+	'cookie secret': 'alongunreadableunguessablestringwhichnononewilleverpickrandomlyandprobablynotevenwithaconcertedeffortandawholelotofclues',
+	'signin redirect': '/',
+	'signout redirect': '/',
 });
 keystone.import('models');
 keystone.set('locals', {
