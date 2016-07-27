@@ -5,6 +5,11 @@ nav.navbar {
     border-color: #d34615; 
 }
 
+div iframe {
+    max-width: 100%;
+}
+
+
 div.jumbotron {
   background-color: #e1e8f0;
 }
