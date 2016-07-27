@@ -24,7 +24,7 @@ exports = module.exports = function (app) {
 	app.get('/loan', routes.views.loan);
 
 	app.get('/dashboard', routes.views.dashboard);
-	app.get('/deposits', routes.views.deposit);
+	app.get('/deposits', routes.views.deposits);
 	app.get('/withdraw', routes.views.withdraw);
 	app.get('/calculator', routes.views.calculator);
 
