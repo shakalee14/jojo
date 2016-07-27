@@ -30,3 +30,6 @@ Member.schema.virtual('canAccessKeystone').get(function () {
  */
 Member.defaultColumns = 'name, email, isAdmin';
 Member.register();
+
+
+module.exports = Member

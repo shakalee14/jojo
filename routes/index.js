@@ -1,6 +1,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var adminRoutesViews = keystone.import('node_modules/keystone/admin/routes/views')
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -18,16 +19,14 @@ exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 	app.get('/account', routes.views.account);
 	app.get('/signup', routes.views.signup);
-	app.get('/signin', auth_path.signin);
-	app.get('/signout', auth_path.signout);
-	// app.get('/susu', routes.views.susu);
+	app.get('/signin', adminRoutesViews.signin);
+	app.get('/signout', adminRoutesViews.signin);
 	app.get('/loan', routes.views.loan);
 
 	app.get('/dashboard', routes.views.dashboard);
 	app.get('/deposits', routes.views.deposits);
 	app.get('/withdraw', routes.views.withdraw);
 	app.get('/calculator', routes.views.calculator);
-
 
 	// index
 	app.get('/susu', routes.views.susu.index)
