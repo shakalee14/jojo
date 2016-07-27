@@ -1,6 +1,7 @@
 var keystone = require('keystone');
 var Susu = require('../../models/susu')
 var Member = require('../../models/member')
+var mailer = require('../../lib/mailer')
 
 // var keystone = require('keystone'),
 //     Post = keystone.list('Post');
@@ -63,7 +64,7 @@ exports = module.exports = {
           res.send('ERRORs: '+JSON.stringify(errors))
           return
         }
-        
+        mailer.sendSusuInvites(susu, members)
         res.redirect('/susu/'+susu.id)
       });
     }); 
