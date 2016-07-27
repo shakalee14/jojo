@@ -12,5 +12,9 @@ exports = module.exports = function (req, res) {
   console.log('req.user',req.user)
 
   // Render the view
-  view.render('index');
+  if (locals.user){
+    view.render('loggedinhomepage');
+  }else{
+    view.render('loggedouthomepage');
+  }
 };
