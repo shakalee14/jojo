@@ -1,0 +1,29 @@
+{{!< default}}
+<h1>New SUSU</h1>
+
+<form action="/susu" method="post">
+  {{#if error}}
+  <h3>{{error}}</h3>
+  {{/if}}
+
+  <div>
+    <input type="text" placeholder="title" name="susu[title]"></input>
+  </div>
+  
+  <div>
+    <textarea placeholder="description" name="susu[description]"></textarea>
+  </div>
+  
+  <div>
+    <input type="date" name="susu[startDate]"/>
+  </div>
+  
+  <div>
+    <input type="number" name="susu[share]" value="1000"/>
+  </div>
+
+  <div>
+    <button type="submit">Create Susu</button>
+  </div>
+</form>
+
