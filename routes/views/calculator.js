@@ -16,21 +16,23 @@ exports = module.exports = function (req, res) {
 
 function calcpayments() {
 
-//establish variables
+	console.log('90')
 
-var rent=document.forms[0].rent.value*1;
-var tax=document.forms[0].tax.value*1;
-var earn=document.forms[0].earn.value*1;
+// //establish variables
 
-//This is the formula that does the math
+// var rent=document.forms[0].rent.value*1;
+// var tax=document.forms[0].tax.value*1;
+// var earn=document.forms[0].earn.value*1;
 
-var result=(earn*(tax/100 +1)-rent);
+// //This is the formula that does the math
 
-// result=Math.round(result*100) /100;
+// var result=(earn*(tax/100 +1)-rent);
 
-//The line below shows the result in the box
+// // result=Math.round(result*100) /100;
 
-document.getElementById(“sugpayment”).innerHTML=result;
+// //The line below shows the result in the box
+
+// document.getElementById(“sugpayment”)=result;
 
 }
 
