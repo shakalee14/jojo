@@ -25,11 +25,14 @@ exports = module.exports = function (app) {
 
 	app.get('/dashboard', routes.views.dashboard);
 	app.get('/deposits', routes.views.deposits);
-	app.get('/withdraw', routes.views.withdraw);
 	app.get('/calculator', routes.views.calculator);
+	app.get('/withdrawals', routes.views.withdrawals);
 
 	// index
 	app.get('/susu', routes.views.susu.index)
+	
+
+
 	// new
 	app.get('/susu/new', routes.views.susu.new)
 	// create
@@ -42,4 +45,12 @@ exports = module.exports = function (app) {
 	app.post('/susu/:susuId', routes.views.susu.update)
 	// delete
 	app.delete('/susu/:susuId', routes.views.susu.delete)
+
+	//withdrawals
+		
+	//create
+	app.post('/withdrawal_requests', routes.views.withdrawal_requests.create)
+
+	//show
+	app.get('/withdrawal_requests', routes.views.withdrawal_requests.show)	
 };

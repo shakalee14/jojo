@@ -1,0 +1,22 @@
+{{!< default}}
+<h1>Withdrawal Request</h1>
+<form action="/susu" method="post">
+  {{#if error}}
+  <h3>{{error}}</h3>
+  {{/if}}
+  <div>
+    <textarea placeholder="description" name="description"></textarea>
+  </div>
+
+  <div>
+    <input type="text" placeholder="title" name="withdrawals[amount]"></input>
+  </div>
+  
+  <div>
+    <input type="date" name="withdrawals[startDate]"/>
+  </div>
+  
+  <div>
+    <button type="submit">Submit Withdrawal Request</button>
+  </div>
+</form>
