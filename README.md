@@ -55,17 +55,17 @@ CRUD:
 
 ## Minimum Required Specifications
 
-- [ ] Mobile responsive 
-- [ ] Write Bootstrap Theme  
+- [x] Mobile responsive 
+- [x] Write Bootstrap Theme  
 - [ ] Money sharing calculator 
-- [ ] Must use data models
-- [ ] Must be able to do user authentication – Log In/Log Out/Sign Up
+- [x] Must use data models
+- [x] Must be able to do user authentication – Log In/Log Out/Sign Up
 - [ ] User must be able to change profile information
-- [ ] Susu info must be able to update based on user info (specifically should be able to show how many users are in the network)
+- [x] Susu info must be able to update based on user info (specifically should be able to show how many users are in the network)
 - [ ] Must keep up with deposits and withdrawals
-- [ ] Must integrate email notification service
+- [x] Must integrate email notification service
 - [ ] Must integrate image hosting service
-- 
+
 
 ## Extra Specs 
 
@@ -77,7 +77,7 @@ CRUD:
 
 Do not remove these specs - they are required for all goals.
 
-- [ ] The artifact produced is properly licensed, preferably with the MIT license.
+- [x] The artifact produced is properly licensed, preferably with the MIT license.
  
 ##Personas:
 
