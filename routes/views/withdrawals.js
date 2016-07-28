@@ -33,22 +33,28 @@ exports = module.exports = {
     var amount = req.body.amount
     var recipient = locals.user
 
+    console.log('SUSU?', req.susu)
+
     var withdrawal = new Withdrawal.model({
-      susu_id:     susuId,
       recipient:   recipient,
       amount:      amount,
       requestedAt: Date.now(),
     });
 
+
     locals.withdrawal = withdrawal;
+    locals.susuId = susuId;
 
     withdrawal.save(function(error){
-      if (error){
-        locals.error = error;
-        view.render('withdrawals/new');
-      }else{
-        res.redirect('/susu/'+susuId+'/withdrawals/'+withdrawal.id);
-      }
+      req.susu.withdrawals.push(withdrawal)
+      req.susu.save(function(error){
+        if (error){
+          locals.error = error;
+          view.render('withdrawals/new');
+        }else{
+          res.redirect('/susu/'+susuId+'/withdrawals/'+withdrawal.id);
+        }
+      });
     });
   },
 
@@ -65,7 +71,6 @@ exports = module.exports = {
       view.render('withdrawals/show');
     })
   },
-
 
 };
 

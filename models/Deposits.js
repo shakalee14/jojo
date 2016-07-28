@@ -5,9 +5,9 @@ var Types = keystone.Field.Types;
  * Deposits Model
  * ==========
  */
-var Deposits = new keystone.List('Deposits');
+var Deposit = new keystone.List('Deposit');
 
-Deposits.add({
+Deposit.add({
 	members: { 
     type: Types.Relationship, 
     ref: 'Member', 
@@ -26,7 +26,7 @@ Deposits.add({
 });
 
 // Provide access to Keystone
-Deposits.schema.virtual('canAccessKeystone').get(function () {
+Deposit.schema.virtual('canAccessKeystone').get(function () {
 	return this.isAdmin;
 });
 
@@ -34,5 +34,5 @@ Deposits.schema.virtual('canAccessKeystone').get(function () {
 /**
  * Registration
  */
-Deposits.defaultColumns = 'name, account, dsr, startDate';
-Deposits.register();
+Deposit.defaultColumns = 'name, account, dsr, startDate';
+Deposit.register();

@@ -16,7 +16,8 @@ Withdrawal.add({
 	recipient: { 
     type: Types.Relationship, 
     ref: 'Member', 
-    initial: true
+    initial: true,
+    required: true
   },
 	amount: {
     type: Types.Money, 
