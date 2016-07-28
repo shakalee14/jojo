@@ -41,8 +41,12 @@ Susu.add({
   },
 	startDate: { 
     type: Types.Date, 
-    initial: Date.now(), 
+    initial: () => Date.now(), 
     required: true
+  },
+  invites: {
+    type: Types.Text, 
+    initial: () => [],
   }
 });
 

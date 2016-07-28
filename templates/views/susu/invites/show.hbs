@@ -1,0 +1,7 @@
+{{!< default}}
+<h1>Hey {{invite.name}}</h1>
+<h2>Wanna Join {{susu.title}}?</h2>
+<form method="post" action="/susu/{{susu.id}}/invites/{{invite.inviteCode}}">
+  <button type="submit" name="action" value="reject">No</button>
+  <button type="submit" name="action" value="accept">Yes</button>
+</form>

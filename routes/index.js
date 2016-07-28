@@ -18,7 +18,7 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/account', routes.views.account);
-	app.get('/signup', routes.views.signup);
+	app.all('/signup', routes.views.signup);
 	app.get('/signin', adminRoutesViews.signin);
 	app.get('/signout', adminRoutesViews.signin);
 	app.get('/loan', routes.views.loan);
@@ -42,4 +42,6 @@ exports = module.exports = function (app) {
 	app.post('/susu/:susuId', routes.views.susu.update)
 	// delete
 	app.delete('/susu/:susuId', routes.views.susu.delete)
+	
+	app.all('/susu/:susuId/invites/:inviteCode', routes.views.susu.invites)
 };
