@@ -2,11 +2,24 @@
 <h1>{{susu.title}}</h1>
 <pre>{{susu.description}}</pre>
 <pre>{{wtf}}</pre>
+
+<h2>Members</h2>
 <ol>
   {{#each susu.members}}
     <li>
       <div>{{this.name.full}}</div>
       <div>{{this.email}}</div>
+    </li>
+  {{/each}}
+</ol>
+
+<h2>Invites</h2>
+<ol>
+  {{#each invites}}
+    <li>
+      <div>{{this.name}}</div>
+      <div>{{this.email}}</div>
+      <div>{{this.inviteCode}}</div>
     </li>
   {{/each}}
 </ol>

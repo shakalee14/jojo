@@ -1,5 +1,39 @@
 {{!< default}}
 
 <div class="container">
-  <h1>Welcome Back {{user.name.first}}</h1>
+<h1> Welcome Back {{user.name.first}}!</h1>
+      <img src="http://placehold.it/150x150"> 
+      <link rel="stylesheet" href="public/styles/dashboard.css">
+      <ul class="tab-group">
+      <li class="tab active"><a href="/deposit">Deposit</a></li>
+      <li class="tab"><a href="/withdraw">Withdraw</a></li>
+      <li class="tab"><a href="/susu/new">Create New SuSu</a></li>
+</ul>
+<h2> Your Susus </h2>
+<div class = table>
+<div class = "row">
+<div class = "col-xs-3"> Date </div> 
+<div class = "col-xs-4"> Amount </div>
+<div class = "col-xs-5"> Balance </div> 
+</div> 
+
+<div class = "row">
+<div class = "col-xs-3"> Info from backend </div> 
+<div class = "col-xs-4"> Info from backend</div>
+<div class = "col-xs-5"> Info from backend </div> 
+</div> 
+</div>
+
+</p> 
+
+<br>
+<br>
+<br>
+
+<div class = "create">
+<h3> Interested in Starting a Susu? </h3> 
+<form action="susu/new">
+<input type="submit" class="button_active" value="Create a Susu">
+</form>
+</div> 
 </div>
