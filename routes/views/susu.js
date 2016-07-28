@@ -1,6 +1,6 @@
 var keystone = require('keystone');
-var Susu = require('../../models/susu')
-var Member = require('../../models/member')
+var Susu = require('../../models/Susu')
+var Member = require('../../models/Member')
 var mailer = require('../../lib/mailer')
 var uuid = require('node-uuid');
 
@@ -85,7 +85,7 @@ exports = module.exports = {
 
     Susu.model.findById(req.params.susuId).populate('members').exec(function(error, susu){
       if (error) throw error;
-      var invites = JSON.parse(susu.invites)
+      var invites = susu.invites ? JSON.parse(susu.invites) : []
       view.render('susu/show', {
         susu: susu,
         invites: invites,

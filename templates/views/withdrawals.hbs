@@ -1,0 +1,22 @@
+{{!< default}}
+<h1>withdrawals</h1>
+<form action="/dashboard" method="post">
+  {{#if error}}
+  <h3>{{error}}</h3>
+  {{/if}}
+  <div>
+    <textarea placeholder="description" name="description"></textarea>
+  </div>
+ 
+  <div>
+    <input type="currency" placeholder="amount" name="withdrawals[amount][0]"></input>
+  </div>
+      
+  <div>
+    <input type="date" name="withdrawals[startDate]"/>
+  </div>
+  
+  <div>
+    <button type="submit">Submit Withdrawal Request</button>
+  </div>
+</form>

@@ -24,8 +24,7 @@ exports = module.exports = function (app) {
 
 	app.get('/dashboard', routes.views.dashboard);
 	app.get('/deposits', routes.views.deposits);
-	app.get('/withdraw', routes.views.withdraw);
-	app.get('/withdrawal/test', routes.views.withdrawals);
+	// app.get('/withdrawal/test', routes.views.withdrawals);
 	app.get('/calculator', routes.views.calculator);
 
 	// index
@@ -44,4 +43,11 @@ exports = module.exports = function (app) {
 	app.delete('/susu/:susuId', routes.views.susu.delete)
 	
 	app.all('/susu/:susuId/invites/:inviteCode', routes.views.susu.invites)
+
+
+
+	app.get( '/susu/:susuId/withdrawals', routes.views.withdrawals.index);
+	app.get( '/susu/:susuId/withdrawals/new', routes.views.withdrawals.new);
+	app.post('/susu/:susuId/withdrawals', routes.views.withdrawals.create);
+	app.get( '/susu/:susuId/withdrawals/:withdrawalId', routes.views.withdrawals.show);
 };
