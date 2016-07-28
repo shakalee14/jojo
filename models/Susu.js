@@ -26,18 +26,15 @@ Susu.add({
     initial: true, 
     many: true
   },
-	share: { 
-    type: Types.Money, 
-    required: true, 
-    initial: true
-  },
-	deposits: { 
+  deposits: { 
     type: Types.Relationship, 
-    ref: 'Deposits'
+    ref: 'Deposit',
+    many: true
   },
 	withdrawals: { 
     type: Types.Relationship, 
-    ref: 'Withdrawals'
+    ref: 'Withdrawal',
+    many: true
   },
 	startDate: { 
     type: Types.Date, 
@@ -47,6 +44,7 @@ Susu.add({
   invites: {
     type: Types.Text, 
     initial: () => [],
+    many: true,
   }
 });
 

@@ -1,6 +1,6 @@
 var keystone = require('keystone');
-var Susu = require('../../models/susu')
-var Member = require('../../models/member')
+var Susu = require('../../models/Susu')
+var Member = require('../../models/Member')
 var mailer = require('../../lib/mailer')
 var uuid = require('node-uuid');
 
@@ -22,13 +22,13 @@ exports = module.exports = {
     var view = new keystone.View(req, res);
     var locals = res.locals;
 
-    Susu.model.find().exec(function(error, susus){
+    // TODO req.user.getSusus ???
+    Susu.model.find().where('members').in([req.user.id]).exec(function(error, susus){
       if (error) throw error;
       view.render('susu/index', {
         susus: susus,
       })
     })
-
   },
 
   new: function(req, res){
@@ -55,6 +55,7 @@ exports = module.exports = {
         res.send('ERROR: '+JSON.stringify(error))
         return
       }
+      members = [req.user].concat(members)
       var susu = new Susu.model({
         title:       attributes.title,
         description: attributes.description,
@@ -83,13 +84,42 @@ exports = module.exports = {
     var view = new keystone.View(req, res);
     var locals = res.locals;
 
-    Susu.model.findById(req.params.susuId).populate('members').exec(function(error, susu){
+    Susu.model.findById(req.params.susuId).populate('members withdrawals').exec(function(error, susu){
       if (error) throw error;
-      var invites = JSON.parse(susu.invites)
-      view.render('susu/show', {
-        susu: susu,
-        invites: invites,
-      })
+      var invites = susu.invites ? JSON.parse(susu.invites) : []
+
+      locals.susu = {
+        title:       susu.title,
+        description: susu.description,
+        deposits:    susu.deposits,
+        startDate:   susu.startDate,
+        invites:     invites,
+        members:     susu.members.map(function(member){
+          return {
+            name:  member.name,
+            email: member.email,
+          }
+        }),
+        withdrawals: susu.withdrawals.map(function(withdrawal){
+          var recipient = susu.members.find(function(member){
+            return member._id.toString() === withdrawal.recipient.toString()
+          })
+          return {
+            recipient: {
+              name:  recipient.name,
+              email: recipient.email,
+            },
+            amount:      withdrawal.amount,
+            requestedAt: withdrawal.requestedAt,
+            approvedAt:  withdrawal.approvedAt,
+            rejectedAt:  withdrawal.rejectedAt,
+          }
+        })
+      };
+
+      console.log(locals)
+
+      view.render('susu/show')
     })
   },
 

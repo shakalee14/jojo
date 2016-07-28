@@ -1,0 +1,11 @@
+{{!< default}}
+<h1>Withdrawal of ${{withdrawal.amount}} for {{withdrawal.recipient.name.full}}</h1>
+
+
+{{#if withdrawal.approvedAt}}
+<h2>Has was approved at {{withdrawal.approvedAt}}</h2>
+{{else if withdrawal.rejectedAt}}
+<h2>Has was rejected at {{withdrawal.approvedAt}}</h2>
+{{else}}
+<h2>is pending approval</h2>
+{{/if}}

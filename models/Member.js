@@ -8,16 +8,47 @@ var Types = keystone.Field.Types;
 var Member = new keystone.List('Member');
 
 Member.add({
-	name: { type: Types.Name, required: true, index: true },
-	email: { type: Types.Email, initial: true, required: true, index: true },
-	password: { type: Types.Password, initial: true, required: true },
-	susu: { type: Types.Relationship, ref: 'Susu' },
-	checking: { type: Types.Number, initial: true},
-	deposits: {type: Types.Relationship, ref: 'Deposits'},
-	withdrawals: {type: Types.Relationship, ref: 'Withdrawals'}
-}, 'Permissions', {
-	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
+	name: { 
+    type: Types.Name, 
+    required: true, 
+    index: true 
+  },
+	email: { 
+    type: Types.Email, 
+    initial: true, 
+    required: true, 
+    index: true 
+  },
+	password: { 
+    type: Types.Password, 
+    initial: true, 
+    required: true 
+  },
+	susus: { 
+    type: Types.Relationship, 
+    ref: 'Susu', 
+    many: true
+  },
+	checking: { 
+    type: Types.Number, 
+    initial: true
+  },
+	deposits: {
+    type: Types.Relationship, 
+    ref: 'Deposits'
+  },
+	withdrawals: {
+    type: Types.Relationship, 
+    ref: 'Withdrawals'
+  }
 });
+
+Member.relationship({ path: 'susus', ref: 'Susu', refPath: 'members' });
+
+
+// , 'Permissions', {
+//   isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
+// }
 
 // Provide access to Keystone
 Member.schema.virtual('canAccessKeystone').get(function () {

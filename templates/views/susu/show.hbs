@@ -3,6 +3,10 @@
 <pre>{{susu.description}}</pre>
 <pre>{{wtf}}</pre>
 
+<div>
+  <a href="/susu/{{susu.id}}/withdrawals/new">Request a withdrawal</a>
+</div>
+
 <h2>Members</h2>
 <ol>
   {{#each susu.members}}
@@ -20,6 +24,15 @@
       <div>{{this.name}}</div>
       <div>{{this.email}}</div>
       <div>{{this.inviteCode}}</div>
+    </li>
+  {{/each}}
+</ol>
+
+<h2>Withdrawals</h2>
+<ol>
+  {{#each susu.withdrawals}}
+    <li>
+      <div>{{this.recipient.name.full}} request {{this.amount}} on {{this.requestedAt}}</div>
     </li>
   {{/each}}
 </ol>

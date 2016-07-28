@@ -1,0 +1,13 @@
+{{!< default}}
+<h1>New Withdrawal</h1>
+
+<form method="post" action="/susu/{{susuId}}/withdrawals">
+  {{#if error}}
+  <h3>{{error}}</h3>
+  {{/if}}
+  <div class="form-group">
+    <label for="withdrawal-amount">How much chu need?</label>
+    <input type="money" class="form-control" id="withdrawal-amount" placeholder="3.50" name="amount" value={{withdrawal.amount}}>
+  </div>
+  <button type="submit" class="btn btn-primary">Request</button>
+</form>
