@@ -1,40 +1,89 @@
-<h1> Calculator </h1>
+<SCRIPT LANGUAGE="JavaScript">
+function fmtPrice(a) {
+  result = "$" + Math.floor(a) + ".";
+  var b = 100 * (a - Math.floor(a)) + 0;
+  result += Math.floor(b / 10);
+  result += Math.floor(b % 10);
+  return result;
+}
+function compute() {
+  var unformatted_tax = document.forms[0].cost.value * document.forms[0].tax.value;
+  document.forms[0].unformatted_tax.value = unformatted_tax;
+  var formatted_tax = fmtPrice(unformatted_tax);
+  document.forms[0].formatted_tax.value = formatted_tax;
+  var cost2 = eval(document.forms[0].cost.value);
+  cost2 += eval(document.forms[0].cost.value * document.forms[0].tax.value);
+  var total_cost = fmtPrice(cost2);
+  document.forms[0].total_cost.value = total_cost;
+}
+function resetIt() {
+  document.forms[0].cost.value = "";
+  document.forms[0].tax.value = "";
+  document.forms[0].unformatted_tax.value = "";
+  document.forms[0].formatted_tax.value = "";
+  document.forms[0].total_cost.value = "";
+}
+</SCRIPT>
 
-    <p> Having trouble deciding how much you can afford to susu? Use our calculator to help you decide how much income you have to spare! </p>
-        <br>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
     <div class = "calculator">
-    <td> How much do you earn a month (after taxes)?* <td width=”165″><input type= “text” name=”nprice” /></td>
-    <tr>
+      <h1> Calculator </h1>
+      <p> How much can you Susu? Use our calculator to figure out the benefits of the Susu. Put in the amount you want to give daily. We will tell you how much you will have in the pool after time.
         <br>
         <br>
-
-    <td> Rent + Utilities + Bills/month <td width=”165″><input type= “text” name=”nprice” /></td>
-
-      </div> 
-        <br> 
         <br>
-
+        <center>
+        <form>
+          <table border="1px" cellpadding="" width="50%">
+            <tr>
+              <td align="left"><font size="+1"> Daily Deposit</font>
+              </td>
+              <td align="left"><font size="+1"> Participation Days</font>
+              </td>
+            </tr>
+            <tr>
+              <td align="center"><input name="cost" size="10" type="text" value="">
+            </td>
+            <td align="center"><input name="tax" size="10" type="text" value="">
+          </td>
+        </tr>
+      </table>
+      <br>
+      <table border="1px" cellpadding="3" width="50%" position = "center">
         <tr>
-    <td height=”31″> How many people do you financially support? </td>
-    <td><select name=”term”>
-
-        <br>
-        <br>
-        <br>
-
-      <option value=”1″> Myself </option>
-      <option value=”2″>1-2</option>
-      <option value=”3″> 2-3</option>
-      <option value=”4″> 4+</option>
-      </select> 
-        <br>
-        <br>
-        <br>
-      <button onclick="calcpayments()">Calculate</button>
-        <br>
-        <br>
-      <b>Your estimated amount of extra income is: </b>
-      <div id=”sugpayment”></div>
-        <br>
-        <button onclick="reset">Reset</button>
+          <td align="left"><font size="+1"> Daily Deposit * Days in the Susu </font>
+          </td>
+          <td align="left"><font size="+1">Total Deposit Amount in the Susu</font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center"><input name="unformatted_tax" size="15" type=
+            "text">
+          </td>
+          <td align="center"><input name="formatted_tax" size="15" type="text">
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class ="buttons">
+      <tr>
+        <td align="center"><input onclick="resetIt()" type="reset" value=
+          "RESET">
+        </td>
+        <td align="center"><input onclick="compute()" type="button" value=
+          "COMPUTE">
+        </td>
+      </tr>
+    </div>
+  </form>
+  </center>
+</div>
+</body>
+</html>
+</body>

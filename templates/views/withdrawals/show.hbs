@@ -1,7 +1,5 @@
 {{!< default}}
 <h1>Withdrawal of ${{withdrawal.amount}} for {{withdrawal.recipient.name.full}}</h1>
-
-
 {{#if withdrawal.approvedAt}}
 <h2>Has was approved at {{withdrawal.approvedAt}}</h2>
 {{else if withdrawal.rejectedAt}}

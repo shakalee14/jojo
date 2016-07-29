@@ -1,11 +1,29 @@
 {{!< default}}
-<h1>{{susu.title}}</h1>
-<pre>{{susu.description}}</pre>
-<pre>{{wtf}}</pre>
 
-<div>
-  <a href="/susu/{{susu.id}}/withdrawals/new">Request a withdrawal</a>
-</div>
+<h1> Current Susu Accounts</h1>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Susu Name</th>
+            <th>Susu Description</th>
+          </tr>
+        </thead>
+        <tbody>
+       <tr class="active">
+            <td>{{susu.title}} </td>
+            <td> {{susu.description}}</td>
+      
+     {{!--        <td> {{this.requestedAt}} </td> --}}
+  
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 
 <h2>Members</h2>
 <ol>
@@ -28,11 +46,29 @@
   {{/each}}
 </ol>
 
-<h2>Withdrawals</h2>
-<ol>
-  {{#each susu.withdrawals}}
-    <li>
-      <div>{{this.recipient.name.full}} request {{this.amount}} on {{this.requestedAt}}</div>
-    </li>
-  {{/each}}
-</ol>
+<div class="row">
+  <div class="col-lg-6">
+    <h2>Past Withdrawals</h2>
+    <a href="/susu/{{susuId}}/withdrawals/new">Request a widthdrawal</a>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Date Requested</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="active">
+            {{#each susu.withdrawals}}
+            <td>{{this.recipient.name.full}} </td>
+            <td> ${{this.amount}}</td>
+            <td> {{this.requestedAt}} </td>
+            {{/each}}
+  
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
