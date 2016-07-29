@@ -8,21 +8,30 @@ var Types = keystone.Field.Types;
 var Deposit = new keystone.List('Deposit');
 
 Deposit.add({
-	members: { 
-    type: Types.Relationship, 
-    ref: 'Member', 
-    initial: true
-  },
 	amount: { 
     type: Types.Money, 
     required: true, 
     initial: true
   },
-	startDate: { 
-    type: Types.Date, 
-    initial: Date.now(), 
+  susu: { 
+    type: Types.Relationship, 
+    ref: 'Susu', 
+    required: true,
+    initial: null
+  },
+  recipient: { 
+    type: Types.Relationship, 
+    ref: 'Member', 
+    initial: true,
+    required: true
+  },
+  requestedAt: {
+    type: Types.Date,
+    initial: () => Date.now(),
     required: true
   }
+
+
 });
 
 // Provide access to Keystone
@@ -36,3 +45,5 @@ Deposit.schema.virtual('canAccessKeystone').get(function () {
  */
 Deposit.defaultColumns = 'name, account, dsr, startDate';
 Deposit.register();
+
+module.exports = Deposit

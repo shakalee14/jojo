@@ -1,26 +1,13 @@
 {{!< default}}
-<h1>Deposits</h1>
+<h1>SUSU Index</h1>
 
-<a href="/susu/{{susuId}}/deposits">Show all deposits</a>
+<ol>
+{{#each susus}}
+  <li>
+    <h2><a href="/susu/{{this.id}}">{{this.title}}</a></h2>
+    <div>{{this.description}}</div>
 
-
-{{!-- <div class = "container">
-  <h1> Deposit History </h1>
-
-  <br>
-  <br>
-  <div class = table>
-        <div class = "row">
-          <div class = "col-xs-3">Date</div> 
-          <div class = "col-xs-4">Amount</div> 
-        </div> 
-
-        <div class = "row">
-          <div class = "col-xs-3">{{deposit.startDate}}</div> 
-          <div class = "col-xs-4">{{deposit.amount}}</div>
-        </div> 
-  </div>
-
-  <a href="/loggedinhomepage">Return to Dashboard </a>
-</div> --}}
+  </li>
+{{/each}}
+</ol>
 
