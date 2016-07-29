@@ -1,0 +1,13 @@
+{{!< default}}
+<h1>SUSU Index</h1>
+
+<ol>
+{{#each susus}}
+  <li>
+    <h2><a href="/susu/{{this.id}}">{{this.title}}</a></h2>
+    <div>{{this.description}}</div>
+
+  </li>
+{{/each}}
+</ol>
+

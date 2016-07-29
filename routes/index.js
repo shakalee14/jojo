@@ -64,7 +64,6 @@ exports = module.exports = function (app) {
 	app.get('/loan', routes.views.loan);
 
 	app.get('/dashboard', routes.views.dashboard);
-	app.get('/deposits', routes.views.deposits);
 	// app.get('/withdrawal/test', routes.views.withdrawals);
 	app.get('/calculator', routes.views.calculator);
 
@@ -97,4 +96,9 @@ exports = module.exports = function (app) {
 	app.get( '/susu/:susuId/withdrawals/new', routes.views.withdrawals.new);
 	app.post('/susu/:susuId/withdrawals', routes.views.withdrawals.create);
 	app.get( '/susu/:susuId/withdrawals/:withdrawalId', routes.views.withdrawals.show);
+
+	app.get( '/susu/:susuId/deposits', routes.views.deposits.index);
+	app.get( '/susu/:susuId/deposits/new', routes.views.deposits.new);
+	app.post('/susu/:susuId/deposits', routes.views.deposits.create);
+	app.get( '/susu/:susuId/deposits/:depositId', routes.views.deposits.show);
 };

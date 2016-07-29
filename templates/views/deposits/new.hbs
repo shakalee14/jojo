@@ -1,0 +1,13 @@
+{{!< default}}
+<h1>New Deposit</h1>
+
+<form method="post" action="/susu/{{susuId}}/deposits">
+  {{#if error}}
+  <h3>{{error}}</h3>
+  {{/if}}
+  <div class="form-group">
+    <label for="deposit-amount">How much do you want to share?</label>
+    <input type="money" class="form-control" id="deposit-amount" placeholder="3.50" name="amount" value={{deposit.amount}}>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
