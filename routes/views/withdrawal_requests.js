@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-var Withdrawals = require('../../models/withdrawals')
+var Withdrawals = require('../../models/Withdrawal')
 
 exports = module.exports = {
    function (req, res) {
