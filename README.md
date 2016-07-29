@@ -57,12 +57,12 @@ CRUD:
 
 - [x] Mobile responsive 
 - [x] Write Bootstrap Theme  
-- [ ] Money sharing calculator 
+- [x] Money sharing calculator 
 - [x] Must use data models
 - [x] Must be able to do user authentication – Log In/Log Out/Sign Up
 - [ ] User must be able to change profile information
 - [x] Susu info must be able to update based on user info (specifically should be able to show how many users are in the network)
-- [ ] Must keep up with deposits and withdrawals
+- [x] Must keep up with deposits and withdrawals
 - [x] Must integrate email notification service
 - [ ] Must integrate image hosting service
 
