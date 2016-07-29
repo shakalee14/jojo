@@ -5,6 +5,7 @@ var adminRoutesViews = keystone.import('node_modules/keystone/admin/routes/views
 var URL = require('url');
 var Susu = require('../models/Susu')
 
+
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
@@ -49,10 +50,13 @@ var requireSusuMembership = function(req, res, next){
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
+
+
 	
 	// Views
 	app.get('/', routes.views.index);
 	app.all('/signin', adminRoutesViews.signin);
+	// app.use('/signup', uploading)
 	app.all('/signup', routes.views.signup);
 
 
@@ -64,7 +68,6 @@ exports = module.exports = function (app) {
 	app.get('/loan', routes.views.loan);
 
 	app.get('/dashboard', routes.views.dashboard);
-	app.get('/deposits', routes.views.deposits);
 	// app.get('/withdrawal/test', routes.views.withdrawals);
 	app.get('/calculator', routes.views.calculator);
 
@@ -91,8 +94,13 @@ exports = module.exports = function (app) {
 	
 	app.all('/susu/:susuId/invites/:inviteCode', routes.views.susu.invites)
 
+	//Deposits
+	app.get( '/susu/:susuId/deposits', routes.views.deposits.index);
+	app.get( '/susu/:susuId/deposits/new', routes.views.deposits.new);
+	app.post('/susu/:susuId/deposits', routes.views.deposits.create);
+	app.get( '/susu/:susuId/deposits/:depositId', routes.views.deposits.show);
 
-
+	//Withdrawal
 	app.get( '/susu/:susuId/withdrawals', routes.views.withdrawals.index);
 	app.get( '/susu/:susuId/withdrawals/new', routes.views.withdrawals.new);
 	app.post('/susu/:susuId/withdrawals', routes.views.withdrawals.create);

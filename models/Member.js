@@ -13,6 +13,9 @@ Member.add({
     required: true, 
     index: true 
   },
+  image: {
+    type: Types.CloudinaryImage
+  },
 	email: { 
     type: Types.Email, 
     initial: true, 

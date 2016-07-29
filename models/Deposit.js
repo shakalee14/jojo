@@ -8,20 +8,21 @@ var Types = keystone.Field.Types;
 var Deposit = new keystone.List('Deposit');
 
 Deposit.add({
-	members: { 
+	 susu: { 
     type: Types.Relationship, 
     ref: 'Member', 
     initial: true
   },
-	amount: { 
+  giver: { 
+    type: Types.Relationship, 
+    ref: 'Member', 
+    initial: true,
+    required: true
+  },
+  amount: {
     type: Types.Money, 
     required: true, 
     initial: true
-  },
-	startDate: { 
-    type: Types.Date, 
-    initial: Date.now(), 
-    required: true
   }
 });
 

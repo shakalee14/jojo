@@ -47,4 +47,16 @@ keystone.set('nav', {
 	members: 'members',
 });
 
+keystone.set('cloudinary config', { 
+	cloud_name: 'learner-s-guild', api_key: '986763876481913', api_secret: 'PU07wRecSynXUv6J9p7L3uv9nOM'
+	});
+// or
+
+ 
+// optional, will prefix each image public_id with [{prefix}]/{list.path}/{field.path}/
+keystone.set('cloudinary folders', true);
+ 
+// optional, will force cloudinary to serve images over https
+keystone.set('cloudinary secure', true);
+
 keystone.start();

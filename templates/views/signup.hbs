@@ -1,4 +1,4 @@
-<form method="post" action="/signup">
+<form method="post" action="/signup" enctype="multipart/form-data">
   {{#if goto}}
   <input type="hidden" name="goto" value={{goto}} />
   {{/if}}
@@ -21,8 +21,8 @@
         </a>
       </div>
     </div>
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
+    <label for="image">File input</label>
+    <input type="file" id="image" name="image" />
     <p class="help-block">Example block-level help text here.</p>
   </div>
   <div class="form-group">
